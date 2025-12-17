@@ -1,0 +1,55 @@
+﻿<Window x:Class="Eventplanner.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Eventplanner" Height="450" Width="800">
+    <DockPanel>
+        <!-- Menubalk bovenaan -->
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Events">
+                <MenuItem x:Name="Allesweg" Header="Verwijder alle events" Click="allesWeg"/>
+                <MenuItem x:Name="standaard" Header="Maak standaard event" Click="Standaard"  />
+            </MenuItem>
+            <MenuItem Header="Afsluiten" Click="Afsluiten" />
+        </Menu>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="55" />
+
+            </Grid.RowDefinitions>
+
+            <Label Content="Type event" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="30,0,0,0"/>
+            <ComboBox x:Name="Type" Grid.Row="1" Grid.Column="0" VerticalAlignment="Bottom" Width="300" HorizontalAlignment="Left" Margin="30,0,30,0" DropDownOpened="open"/>
+
+            <Label Content="Naam event" Grid.Row="2" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="30,0,0,0"/>
+            <TextBox x:Name="naamEvent" Grid.Row="2" Grid.Column="0" VerticalAlignment="Bottom" Width="300" HorizontalAlignment="Left" Margin="30,0,30,0"/>
+
+            <Label Content="Aantal bezoekers" Grid.Row="3" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="30,0,0,0"/>
+            <TextBox x:Name="aantalBezoekers" Grid.Row="3" Grid.Column="0" VerticalAlignment="Bottom" Width="300" HorizontalAlignment="Left" Margin="30,0,30,0"/>
+
+            <Button Content="Voeg event toe" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" Width="200" Height="30" HorizontalAlignment="Center" Margin="30,0,30,0" Click="voegToe"/>
+            <Button Content="Verwijder event" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center" Width="200" Height="30" HorizontalAlignment="Center" Margin="30,0,30,0" Click="Verwijderen"/>
+
+            <Border Grid.Row="0" Grid.Column="2"
+        Grid.RowSpan="7" Grid.ColumnSpan="1"
+        Height="360" Width="400"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Top">
+                <ListBox x:Name="Textblock" 
+                SelectionMode="Multiple" SelectionChanged="Textblock_SelectionChanged" Margin="20,20,0,0"/>
+            </Border>
+
+        </Grid>
+    </DockPanel>
+</Window>
